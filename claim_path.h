@@ -1,0 +1,29 @@
+#ifndef CLAIM_PATH_H_
+#define CLAIM_PATH_H_
+
+#include <iostream>
+
+const double sample_time = 0.02;
+const double v_max = 10;
+const double v_min = -10;
+const double a_max = 6;
+const double a_min = -6;
+
+class path
+{
+private:
+		double origin_pos_x;
+		double origin_pos_y;
+		double origin_v_x;
+		double origin_v_y;
+		double terminal_pos_x;
+		double terminal_pos_y;
+		double terminal_v_x;
+		double terminal_v_y;
+public:
+		void origin_construct(double pos_x, double pos_y, double v_x, double v_y);
+		void terminal_construct(double pos_x, double pos_y, double v_x, double v_y);
+		void show_construct(void);
+};
+
+#endif
