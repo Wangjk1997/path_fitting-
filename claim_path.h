@@ -2,12 +2,7 @@
 #define CLAIM_PATH_H_
 
 #include <iostream>
-
-const double sample_time = 0.02;
-const double v_max = 10;
-const double v_min = -10;
-const double a_max = 6;
-const double a_min = -6;
+#include "const.h"
 
 class path
 {

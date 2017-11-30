@@ -20,6 +20,7 @@ int main()
 	cout<<"vy"<<endl;
 	cin>>v_y;
 	road.origin_construct(pos_x,pos_y,v_x,v_y);
+	road.terminal_construct(pos_x,pos_y,v_x,v_y);
 	road.show_construct();
 	getchar();
 	getchar();
