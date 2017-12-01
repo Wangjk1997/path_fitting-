@@ -1,4 +1,5 @@
 #include "claim_path.h"
+#include "claim_function.h"
 #include <iostream>
 
 int main()
@@ -6,11 +7,14 @@ int main()
 	using std::cin;
 	using std::cout;
 	using std::endl;
-	double pos_x;
-	double pos_y;
-	double v_x;
-	double v_y;
-	path road;
+	double o_p = 10;
+	double o_v = 5;
+	double t_p = 20;
+	double t_v = 0;
+	int t = 0;
+	t = cal_spendtime(o_p, o_v, t_p, t_v);
+	cout << "t	" << t <<endl;
+	/*path road;
 	cout<<"x"<<endl;
 	cin>>pos_x;
 	cout<<"y"<<endl;
@@ -22,6 +26,7 @@ int main()
 	road.origin_construct(pos_x,pos_y,v_x,v_y);
 	road.terminal_construct(pos_x,pos_y,v_x,v_y);
 	road.show_construct();
-	getchar();
+	getchar();*/
+
 	getchar();
 }
