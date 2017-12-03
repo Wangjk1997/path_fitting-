@@ -7,10 +7,10 @@ int main()
 	using std::cin;
 	using std::cout;
 	using std::endl;
-	double o_p = -5;
-	double o_v = 8;
-	double t_p = 20;
-	double t_v = 0;
+	double o_p = 4;
+	double o_v = 3;
+	double t_p = 6;
+	double t_v = 8;
 	int t = 0;
 	t = cal_spendtime(o_p, o_v, t_p, t_v);
 	cout << "t	" << t <<endl;
