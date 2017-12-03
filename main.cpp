@@ -7,8 +7,8 @@ int main()
 	using std::cin;
 	using std::cout;
 	using std::endl;
-	double o_p = 10;
-	double o_v = 5;
+	double o_p = -5;
+	double o_v = 8;
 	double t_p = 20;
 	double t_v = 0;
 	int t = 0;

@@ -14,7 +14,7 @@ int cal_spendtime(double origin_pos, double origin_v, double terminal_pos, doubl
 		origin_pos += origin_v * sample_time;
 		origin_v += sgn(delta_v) * delta_v_max;
 		terminal_pos -= terminal_v * sample_time;
-		terminal_v -= sgn(delta_v) * delta_v_max;
+		terminal_v -= sgn(delta_v) * delta_v_max;/////////////////////////粗调整
 		cout << "step			"<< i <<endl;
 		cout << "delta_pos		"<<delta_pos<<endl;
 		cout << "delta_v		"<<delta_v<<endl;
@@ -23,9 +23,23 @@ int cal_spendtime(double origin_pos, double origin_v, double terminal_pos, doubl
 		cout << "origin_pos		"<<origin_pos<<endl;
 		cout << "origin_v		"<<origin_v <<endl;
 		cout << "terminal_pos	"<<terminal_pos<<endl;
-		cout << "terminal_v		"<<terminal_v << endl;
+		cout << "terminal_v		"<<terminal_v << endl;	
 	}
-	
+	{
+		origin_pos += origin_v * sample_time;
+		origin_v += sgn(delta_v) * (origin_v - terminal_v) / 2;
+		terminal_pos -= terminal_v * sample_time;
+		terminal_v -= sgn(delta_v) * (origin_v - terminal_v);//////////////////////////最后调整速度相同
+	}
+		cout <<endl<<endl;
+		cout << "delta_pos		"<<delta_pos<<endl;
+		cout << "delta_v		"<<delta_v<<endl;
+		cout << "delta_v_max	"<<delta_v_max<<endl;
+		cout << "delta_pos_max	"<<delta_pos_max<<endl;
+		cout << "origin_pos		"<<origin_pos<<endl;
+		cout << "origin_v		"<<origin_v <<endl;
+		cout << "terminal_pos	"<<terminal_pos<<endl;
+		cout << "terminal_v		"<<terminal_v << endl;	
 	return time;
 }
 
