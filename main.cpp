@@ -1,32 +1,33 @@
 #include "claim_path.h"
 #include "claim_function.h"
 #include <iostream>
-
+using namespace std;
 int main()
 {
-	using std::cin;
-	using std::cout;
-	using std::endl;
-	double o_p = 4;
-	double o_v = 3;
-	double t_p = 6;
-	double t_v = 8;
-	int t = 0;
-	t = cal_spendtime(o_p, o_v, t_p, t_v);
-	cout << "t	" << t <<endl;
-	/*path road;
-	cout<<"x"<<endl;
-	cin>>pos_x;
-	cout<<"y"<<endl;
-	cin>>pos_y;
-	cout<<"vx"<<endl;
-	cin>>v_x;
-	cout<<"vy"<<endl;
-	cin>>v_y;
-	road.origin_construct(pos_x,pos_y,v_x,v_y);
-	road.terminal_construct(pos_x,pos_y,v_x,v_y);
-	road.show_construct();
-	getchar();*/
+	double origin_pos_x = 3;
+	//double origin_pos_y = 5;
+	double origin_v_x = 3;
+	//double origin_v_y = 7;
+	double terminal_pos_x = -3;
+	//double terminal_pos_y = 5;
+	double terminal_v_x = -2;
+	//double terminal_v_y = 5;
+	int time = 0;
+	//path road;
+	//road.origin_construct(origin_pos_x,origin_pos_y,origin_v_x,origin_v_y);
+	//road.terminal_construct(terminal_pos_x,terminal_pos_y,terminal_v_x,terminal_v_y);
+	//road.deside_time();
+	//road.show_construct();
+	time = cal_spendtime(origin_pos_x,origin_v_x,terminal_pos_x,terminal_v_x);
+	int test_time = 251;
+	cout << time<<endl<<endl;
 
+	output *p = cal_output(origin_pos_x,origin_v_x,terminal_pos_x,terminal_v_x,test_time);
+	for (int i = 0; i < test_time; i++)
+	{
+		cout << p[i].pos <<endl;
+		cout << p[i].v << endl;
+	}
+	delete [] p;
 	getchar();
 }
