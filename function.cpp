@@ -120,7 +120,7 @@ output* cal_output(double origin_pos, double origin_v,double terminal_pos, doubl
 	{		
 		origin_pos += origin_v * sample_time;
 		terminal_pos -= terminal_v * sample_time;
-		flag_now = sgn(delta_pos,delta_pos_expected);
+		flag_now = judgement(delta_pos,delta_pos_expected);
 
 		if (flag_now == 0)
 		{
@@ -191,6 +191,21 @@ int sgn(double x, double y)
 		{
 			return -1;
 		}
+	}
+}
+int judgement(double x, double y)
+{
+	if (x > (y + judgement_max_limit))
+	{
+		return 1;
+	}
+	else if (x < (y - judgement_max_limit))
+	{
+		return -1;
+	}
+	else
+	{
+		return 0;
 	}
 }
 double limit_v(double v, double top, double bottom)
