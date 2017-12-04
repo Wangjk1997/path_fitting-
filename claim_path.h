@@ -2,6 +2,7 @@
 #define CLAIM_PATH_H_
 
 #include <iostream>
+#include <fstream>
 #include "const.h"
 #include "claim_function.h"
 
@@ -17,12 +18,12 @@ private:
 		double terminal_v_x;
 		double terminal_v_y;
 		int time;
-		
+		void deside_time(void);
 public:
 		void origin_construct(double pos_x, double pos_y, double v_x, double v_y);
 		void terminal_construct(double pos_x, double pos_y, double v_x, double v_y);
+		void output_result(void);
 		void show_construct(void);
-		void deside_time(void);
 };
 
 

@@ -46,3 +46,32 @@ void path::show_construct(void)
 	cout<<terminal_v_y<<endl;
 	cout<<time<<endl;
 }
+
+void path::output_result(void)
+{
+	deside_time();
+	output *p_x = cal_output(origin_pos_x, origin_v_x, terminal_pos_x, terminal_v_x,time);
+	output *p_y = cal_output(origin_pos_y, origin_v_y, terminal_pos_y, terminal_v_y,time);
+	using std::ofstream;
+	using std::endl;
+	ofstream file;
+	file.open("result.txt");
+	for (int i = 0; i < time; i++)
+	{
+		if(i % 20 == 0)
+		{
+			file << p_x[i].pos <<" ";		
+		}
+	}
+	file<<endl;
+	for (int i = 0; i < time; i++)
+	{
+		if (i % 20 == 0)
+		{
+			file << p_y[i].pos << " ";
+		}
+	}
+	delete [] p_x;
+	delete [] p_y;
+	file.close();
+}

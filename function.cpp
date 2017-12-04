@@ -135,31 +135,30 @@ output* cal_output(double origin_pos, double origin_v,double terminal_pos, doubl
 				terminal_v = origin_v;
 				origin_v = limit_v(origin_v,v_max,-v_max);
 				terminal_v = limit_v(terminal_v,v_max,-v_max);
-				cout<<endl;
+				/*cout<<endl;
 				cout<<"flag_now		"<<flag_now<<endl;
 				cout<<"time_left	"<<time_left<<endl;
 				cout<<"expect_delta	"<<delta_pos_expected<<endl;
 				cout<<"delta_pos	"<<delta_pos<<endl;
 				cout<<"origin_pos	"<<origin_pos<<endl;
 				cout<<"origin_v		"<<origin_v<<endl;
-				cout<<endl;
+				cout<<endl;*/
 			}
 			else
 			{
 				using namespace std;
-				cout << endl;
 				origin_v = delta_pos / (time_left * sample_time);
 				terminal_v = delta_pos / (time_left * sample_time);
 				origin_v = limit_v(origin_v,v_max,-v_max);
 				terminal_v = limit_v(terminal_v,v_max,-v_max);
-				cout<<endl;
+				/*cout<<endl;
 				cout<<"flag_now		"<<flag_now<<endl;
 				cout<<"time_left	"<<time_left<<endl;
 				cout<<"expect_delta	"<<delta_pos_expected<<endl;
 				cout<<"delta_pos	"<<delta_pos<<endl;
 				cout<<"origin_pos	"<<origin_pos<<endl;
 				cout<<"origin_v		"<<origin_v<<endl;
-				cout<<endl;
+				cout<<endl;*/
 			}
 		}
 		address[time].pos = origin_pos;
