@@ -5,14 +5,14 @@
 using namespace std;
 int main()
 {
-	double origin_pos_x = 21.4975845400000;
-	double origin_pos_y = 63.2850241500000;
-	double origin_v_x = 0.0495513631304701;
+	double origin_pos_x = 35.6898010700000;
+	double origin_pos_y = 61.3709194200000;
+	double origin_v_x = 0.0495513631304700;
 	double origin_v_y = -0.00668299423254939;
-	double terminal_pos_x = 35.6898010700000;
-	double terminal_pos_y = 61.3709194200000;
-	double terminal_v_x = 0.0495513631304700;
-	double terminal_v_y = -0.00668299423254939;
+	double terminal_pos_x = 101.381219130000;
+	double terminal_pos_y = 76.4713463800000;
+	double terminal_v_x = 0.0287651595836259;
+	double terminal_v_y = -0.0408970120440178;
 	int time = 0;
 	path road;
 	road.origin_construct(origin_pos_x,origin_pos_y,origin_v_x,origin_v_y);
