@@ -6,6 +6,9 @@
 using namespace std;
 int main()
 {
+	ofstream filedelete("result.txt",ios_base::out);
+	filedelete<<"";
+	filedelete.close();
 	sample *p = load();
 	int point = length_sample();
 	path road;
@@ -27,6 +30,5 @@ int main()
 
 	
 	delete [] p;
-	getchar();
 
 }
