@@ -1,11 +1,12 @@
 #include "claim_path.h"
 #include "claim_function.h"
+#include "claim_read.h"
 #include <iostream>
 #include <fstream>
 using namespace std;
 int main()
 {
-	double origin_pos_x = 35.6898010700000;
+	/*double origin_pos_x = 35.6898010700000;
 	double origin_pos_y = 61.3709194200000;
 	double origin_v_x = 0.0495513631304700;
 	double origin_v_y = -0.00668299423254939;
@@ -17,7 +18,7 @@ int main()
 	path road;
 	road.origin_construct(origin_pos_x,origin_pos_y,origin_v_x,origin_v_y);
 	road.terminal_construct(terminal_pos_x,terminal_pos_y,terminal_v_x,terminal_v_y);
-	road.output_result();
+	road.output_result();*/
 	//road.show_construct();
 	/*time = cal_spendtime(origin_pos_x,origin_v_x,terminal_pos_x,terminal_v_x);
 	int test_time = 251;
@@ -32,5 +33,15 @@ int main()
 	}
 	file.close();
 	delete [] p;*/
+	sample *p = load();
+	for (int i = 0; i < 16; i++)
+	{
+		cout << "number	"<< i <<endl;
+		cout <<  p[i].pos_x << endl;
+		cout <<  p[i].pos_y << endl;
+		cout <<  p[i].v_x << endl;
+		cout <<  p[i].v_y << endl<<endl;
+	}
 	getchar();
+
 }

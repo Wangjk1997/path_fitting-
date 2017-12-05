@@ -5,6 +5,7 @@
 #include <fstream>
 #include "const.h"
 #include "claim_function.h"
+#include "claim_read.h"
 
 class path
 {
