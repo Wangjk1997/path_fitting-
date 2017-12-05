@@ -12,7 +12,8 @@ typedef struct sample_input
 } sample;
 
 sample* load(void);
-//char* filename = "D:\\DEMO\\Result1.txt";
 sample deal_single_sample(char *input);
-const int buff = 200;
-const int num_sample = 20;
+int length_sample(void);
+
+const int buff = 10000;
+const int num_sample = 40;

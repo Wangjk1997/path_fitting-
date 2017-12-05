@@ -6,42 +6,27 @@
 using namespace std;
 int main()
 {
-	/*double origin_pos_x = 35.6898010700000;
-	double origin_pos_y = 61.3709194200000;
-	double origin_v_x = 0.0495513631304700;
-	double origin_v_y = -0.00668299423254939;
-	double terminal_pos_x = 101.381219130000;
-	double terminal_pos_y = 76.4713463800000;
-	double terminal_v_x = 0.0287651595836259;
-	double terminal_v_y = -0.0408970120440178;
-	int time = 0;
-	path road;
-	road.origin_construct(origin_pos_x,origin_pos_y,origin_v_x,origin_v_y);
-	road.terminal_construct(terminal_pos_x,terminal_pos_y,terminal_v_x,terminal_v_y);
-	road.output_result();*/
-	//road.show_construct();
-	/*time = cal_spendtime(origin_pos_x,origin_v_x,terminal_pos_x,terminal_v_x);
-	int test_time = 251;
-	cout << time<<endl<<endl;
-	output *p = cal_output(origin_pos_x,origin_v_x,terminal_pos_x,terminal_v_x,time);
-	ofstream file;
-	file.open("result.txt");
-	
-	for (int i = 0; i < time; i++)
-	{
-		file << p[i].pos <<" ";
-	}
-	file.close();
-	delete [] p;*/
 	sample *p = load();
-	for (int i = 0; i < 16; i++)
+	int point = length_sample();
+	path road;
+	for (int i = 0; i < point - 1; i++)
 	{
-		cout << "number	"<< i <<endl;
-		cout <<  p[i].pos_x << endl;
-		cout <<  p[i].pos_y << endl;
-		cout <<  p[i].v_x << endl;
-		cout <<  p[i].v_y << endl<<endl;
+		road.origin_construct(p[i]);
+		road.terminal_construct(p[i+1]);
+		road.output_result_x();
 	}
+	ofstream file("result.txt",ios_base::out | ios_base::app);
+	file << ';';
+	file.close();
+	for (int i = 0; i < point - 1; i++)
+	{
+		road.origin_construct(p[i]);
+		road.terminal_construct(p[i+1]);
+		road.output_result_y();
+	}
+
+	
+	delete [] p;
 	getchar();
 
 }

@@ -2,18 +2,19 @@
 using namespace std;
 sample* load(void)
 {
-	ifstream infile("D:\\DEMO\\Result1.txt",ios_base::in);
+	ifstream infile("D:\\DEMO\\Result.txt",ios_base::in);   ///////Change the file here
 	if (!infile.is_open())
 	{
 		cerr << "can't open it"<<endl;
 	}
+	
 	char input[num_sample][buff];
 	int i = 0;
 	int n = 0;
 	while (!infile.eof())
 	{
 		infile.getline(input[i],buff);
-		if (isdigit(input[i][0]))
+		if (isdigit(input[i][0]) || input[i][0] == '-')
 		{
 			i++;
 			n++;
@@ -22,12 +23,19 @@ sample* load(void)
 		{
 			;
 		}
+		//cout << input[i]<<endl;
+		//getchar();
 	}
 	infile.close();
 	sample *p = new sample [n];
 	for (int i = 0; i < n; i++)
 	{
 		p[i] = deal_single_sample(input[i]);
+		/*cout <<  p[i].pos_x << endl;
+		cout <<  p[i].pos_y << endl;
+		cout <<  p[i].v_x << endl;
+		cout <<  p[i].v_y << endl<<endl;
+		getchar();*/
 	}
 	return p;
 }
@@ -74,4 +82,31 @@ sample deal_single_sample(char *input)
 		}
 	}
 	return result;
+}
+
+int length_sample(void)
+{
+	ifstream infile("D:\\DEMO\\Result.txt",ios_base::in);        //////Change the file here
+	if (!infile.is_open())
+	{
+		cerr << "can't open it"<<endl;
+	}
+	char input[num_sample][buff];
+	int i = 0;
+	int n = 0;
+	while (!infile.eof())
+	{
+		infile.getline(input[i],buff);
+		if (isdigit(input[i][0]) || input[i][0] == '-')
+		{
+			i++;
+			n++;
+		}
+		else
+		{
+			;
+		}
+	}
+	return n;
+	infile.close();
 }

@@ -21,10 +21,12 @@ private:
 		int time;
 		void deside_time(void);
 public:
-		void origin_construct(double pos_x, double pos_y, double v_x, double v_y);
-		void terminal_construct(double pos_x, double pos_y, double v_x, double v_y);
+		void origin_construct(sample origin);
+		void terminal_construct(sample terminal);
 		void output_result(void);
 		void show_construct(void);
+		void output_result_x(void);
+		void output_result_y(void);
 };
 
 
